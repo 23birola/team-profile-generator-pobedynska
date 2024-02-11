@@ -109,19 +109,21 @@ function gatherManagerInfo() {
       const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
       team.push(manager);
       promptUser();
-    });
+    })
+    .catch((err) => console.error(err));;
 }
 
 // function that engineer Manager information
 
 function gatherEngineerInfo() {
-    inquirer
+  inquirer
     .prompt(engineerQuestions)
     .then((answers) => {
       const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
       team.push(engineer);
       promptUser();
-    });
+    })
+    .catch((err) => console.error(err));;
 }
 
 // function that gather intern information
@@ -133,7 +135,8 @@ function gatherInternInfo() {
       const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
       team.push(intern);
       promptUser();
-    });
+    })
+     .catch((err) => console.error(err));;
 }
 
 function promptUser() {
@@ -158,7 +161,8 @@ function promptUser() {
           generateHTML();
           break;
       }
-    });
+    })
+    .catch((err) => console.error(err));
 }
 
 function generateHTML() {
