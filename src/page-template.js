@@ -93,8 +93,38 @@ module.exports = team => {
     <title>My Team</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
+    <style>
+        .team-heading {
+            background-color: #809fff;
+            color: #002db3;
+        }
+
+        .card-header {
+            background-color: #bfcfff;
+            color: #002db3;
+        }
+
+        .card {
+            margin-bottom: 15px;
+            width: 300px;
+        }
+
+        .team-area {
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .team-area {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
