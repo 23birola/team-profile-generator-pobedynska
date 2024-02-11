@@ -8,15 +8,22 @@
   color: #002db3;
 }
 
+ .card {
+   margin-bottom: 15px;
+   width: 300px;
+ }
+
 .team-area {
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 767px) {
   .team-area {
     flex-direction: column;
   }
+
   .card {
-    margin-bottom: 15px;
+    width: 100%;
   }
 }
