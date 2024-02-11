@@ -30,7 +30,7 @@ When a user starts the application then they are prompted to enter the **team ma
 
 **Here is the link to this project** https://github.com/23birola/team-profile-generator-pobedynska
 
-**Here is the project demo**
+**Here is the project screenshot**
 
 ![screenshot](/images/screenshot.png)
 
