@@ -1,14 +1,15 @@
+const inquirer = require('inquirer');
+const fs = require("fs");
+const path = require("path");
+
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const inquirer = require("inquirer");
-const path = require("path");
-const fs = require("fs");
+const render = require("./src/page-template.js");
+
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
-const render = require("./src/page-template.js");
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
@@ -99,6 +100,8 @@ const internQuestions = [
 
 const team = [];
 
+// function that gather Manager information
+
 function gatherManagerInfo() {
   inquirer
     .prompt(managerQuestions)
@@ -108,6 +111,8 @@ function gatherManagerInfo() {
       promptUser();
     });
 }
+
+// function that engineer Manager information
 
 function gatherEngineerInfo() {
     inquirer
@@ -119,11 +124,13 @@ function gatherEngineerInfo() {
     });
 }
 
+// function that gather intern information
+
 function gatherInternInfo() {
    inquirer
     .prompt(internQuestions)
     .then((answers) => {
-      const intern = new Engineer(answers.name, answers.id, answers.email, answers.school);
+      const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
       team.push(intern);
       promptUser();
     });
@@ -156,7 +163,7 @@ function promptUser() {
 
 function generateHTML() {
   const html = render(team);
-  fs.writeFileSync('./output/team.html', html);
+  fs.writeFileSync(outputPath, html);
   console.log('HTML file generated successfully!');
 }
 

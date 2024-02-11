@@ -1,0 +1,22 @@
+.team-heading {
+  background-color: #809fff;
+  color: #002db3;
+}
+
+.card-header {
+  background-color: #bfcfff;
+  color: #002db3;
+}
+
+.team-area {
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 767px) {
+  .team-area {
+    flex-direction: column;
+  }
+  .card {
+    margin-bottom: 15px;
+  }
+}
